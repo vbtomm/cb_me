@@ -1,0 +1,24 @@
+//01
+
+import java.time.LocalDate
+
+fun main() {
+    print("Enter a date (YYYY-MM-DD): ")
+    val dateStr = readLine() ?: ""
+    val date = LocalDate.parse(dateStr)
+
+    val holiday = when (date) {
+        LocalDate.of(date.year, 1, 1) -> "New Year's Day"
+        LocalDate.of(date.year, 1, 7) -> "Christmas Day"
+        LocalDate.of(date.year, 2, 23) -> "Defender of the Fatherland Day"
+
+        // add more holidays as necessary
+        else -> ""
+    }
+
+    if (holiday.isNotEmpty()) {
+        println("$holiday is on ${date.monthValue}/${date.dayOfMonth}/${date.year}")
+    } else {
+        println("There is no holiday on ${date.monthValue}/${date.dayOfMonth}/${date.year}")
+    }
+}

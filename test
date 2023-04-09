@@ -22,3 +22,15 @@ fun main() {
         println("There is no holiday on ${date.monthValue}/${date.dayOfMonth}/${date.year}")
     }
 }
+
+//02
+import java.util.*
+
+fun main() {
+    val input = Scanner(System.`in`)
+    print("Enter a test string: ")
+    var testString = input.nextLine()
+    testString = testString.replace("[^a-zA-Z]".toRegex(), "")
+    testString = testString.toLowerCase()
+    println(testString)
+}
